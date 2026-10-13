@@ -8,6 +8,7 @@
 <title>One-Time Setup</title>
 <!-- The one-time setup, step by step: one action per step, and what you should see. -->
 <style>
+  .muted { color: #6B6B66; font-size: 0.92em; }
   * { box-sizing: border-box; }
   body { margin: 0; background: #F4F4F2; color: #1C1C1A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 28px 16px 80px; }
@@ -93,7 +94,7 @@
     <p class="see">the project's home page, with its address <code>https://….supabase.co</code> near the top.</p></div>
 
   <div class="step"><span class="num">5</span><h3>Create the tables</h3>
-    <ol><li>Click this button: <button class="copy" id="copy-setup" disabled>Copy the setup</button> <span id="copy-status" class="copied"></span></li>
+    <ol><li>Click this button, here on this page: <button class="copy" id="copy-setup" disabled>Copy the setup</button> <span id="copy-status" class="copied"></span><br><span class="muted">Not Supabase's own <b>Copy</b> button next to the project address: that one copies the address and keys, which this step doesn't need.</span></li>
       <li>In Supabase, open the <b>SQL Editor</b>: it's in the left sidebar (hover over the icons to see their names; it looks
         like <code>&gt;_</code>). Click <b>New query</b>, paste (⌘V), and click <b>Run</b>. If it warns about destructive operations, confirm: the setup only creates what is missing.</li></ol>
     <p class="see">a small result table listing <code>sessions</code>, <code>clicks</code>, <code>selections</code>, <code>identities</code>.</p></div>
