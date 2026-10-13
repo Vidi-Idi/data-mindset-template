@@ -3,4 +3,4 @@
 // (the "publishable" key). The publishable key is safe to put in a web
 // page: the database's own rules (setup.sql) decide what it may do.
 const SUPABASE_URL = 'https://scbgodtugstfyhdulpws.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_YOUR_KEY';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_yzE84VGeV6bwo82rzTFJFg_MndnDlJ3';
