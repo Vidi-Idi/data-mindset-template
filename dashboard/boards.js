@@ -16,7 +16,31 @@ const BOARDS = {
           data.map(r => `<tr><td>${esc(r.app)}</td><td>${esc(r.screen)}</td><td class="num">${r.taps}</td></tr>`).join('')}</tbody></table></div>`;
       } }
   ],
-  'unit-01': [],
+  'unit-01': [
+    { title: 'Replay a visit', view: 'visit_events', render: async (el) => {
+        el.innerHTML = `<p class="muted">Every click, choice and sign-in of one visit, oldest first. Any app, test runs and practice data included.</p>
+          <form class="replay"><input name="sid" placeholder="Paste a session_id" size="40" autocomplete="off"> <button>Replay</button></form>
+          <div class="replay-out"></div>`;
+        const out = el.querySelector('.replay-out');
+        el.querySelector('form').addEventListener('submit', async (ev) => {
+          ev.preventDefault();
+          const sid = ev.target.sid.value.trim();
+          if (!sid) return;
+          const { data, error } = await db.schema('analysis').from('visit_events')
+            .select('*').eq('session_id', sid).order('created_at').order('id');
+          if (error) { out.innerHTML = `<p class="bad">${esc(error.message)}</p>`; return; }
+          if (!data.length) { out.innerHTML = '<p class="muted">No clicks, choices or sign-ins for this session_id.</p>'; return; }
+          const v = data[0];
+          const visitCols = ['session_id', 'user_id', 'app', 'platform', 'browser', 'source', 'screen_w', 'is_test', 'is_synthetic', 'started_at'];
+          const cols = ['created_at', 'kind', 'id', 'step', 'overlay', 'x', 'y', 'seq', 'hit', 'label', 'value', 'duration_ms', 'account'];
+          const cell = x => x === null ? '<span class="muted">–</span>' : esc(x);
+          out.innerHTML = `<h3>The visit</h3><div class="scroll"><table><thead><tr>${visitCols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+            <tbody><tr>${visitCols.map(c => `<td>${cell(v[c])}</td>`).join('')}</tr></tbody></table></div>
+            <h3>Timeline (${data.length} rows)</h3><div class="scroll"><table><thead><tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${
+            data.map(r => `<tr>${cols.map(c => `<td class="${typeof r[c] === 'number' ? 'num' : ''}">${cell(r[c])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+        });
+      } }
+  ],
   'unit-02': [],
   'unit-03': [],
   'unit-04': [],
