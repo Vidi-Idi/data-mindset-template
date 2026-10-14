@@ -2,6 +2,31 @@
 
 **The question this lesson asks:** can people do what the app is for, and how long does it take?
 
+## How it goes
+
+1. **[The class slides](slides/04-tasks/slides.html)**, in class with your lecturer.
+2. **The guided walkthrough, with your assistant.** In the Claude app: **Code → + New**, check the chips say
+   **Data-mindset** and your repository, and say: ***"Let's practice lesson 4"***. It takes you through
+   everything, one step at a time: loading the practice data, deciding what each number means, building
+   your board, and checking it.
+3. **[Lesson 4 · Questions](checker/?lesson=lesson-04)**, answered from [your dashboard](dashboard/#unit-04), then the memo.
+
+## What you'll build
+
+On [your dashboard's **lesson 4** board](dashboard/#unit-04):
+- **Your task**: you choose it (a suggested one, or your own in words), and approve its best route. Your practice data is made from it.
+- **Your task's runs**, **who succeeded** (directly, indirectly, or not), and **time to success**.
+
+## The practice data
+
+Your assistant tells you when. Then copy it here, and run it in Supabase's SQL Editor.
+
+[the practice data](data/copy.html?f=lesson-04)
+
+<!-- For your assistant: the page stops here. Everything below is your brief for this lesson; the team doesn't see it on the page. -->
+
+**The question this lesson asks:** can people do what the app is for, and how long does it take?
+
 ## 0. The class slides
 
 Start with [the slides for this lesson](slides/04-tasks/slides.html) (arrow keys to move). The
@@ -10,7 +35,7 @@ walkthrough below assumes you have been through them.
 ## 1. Your task
 
 > **Build it with your AI assistant.** In the Claude app (or [claude.ai/code](https://claude.ai/code)): **Code → + New**,
-> check the chip above the message box says **Data-mindset**, and type: *"Let's start lesson 4"*.
+> check the chip above the message box says **Data-mindset**, and type: *"Let's practice lesson 4"*.
 > It walks you through everything below, one step at a time.
 
 A usability task is a goal you give a participant: *"Find a photo of a dog and open it."* Your team
